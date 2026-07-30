@@ -1,24 +1,24 @@
 <?php
     namespace Projeto\ti23t\Model;
 
-    class Animal{
+    class Veterinario{
 
         //Encapsulamento
         private int $codigo;
         private string $nome;
-        private string $especie;
-        private string $raca;
-        private int $idade;
-        private string $tutor;
+        private int $crmv;
+        private string $especialidade;
+        private string $turno;
+        private int $telefone;
 
         //Construtor
-        public function __construct(int $codigo, string $nome, string $especie, string $raca, int $idade, string $tutor){
+        public function __construct(int $codigo, string $nome, int $crmv, string $especialidade, string $turno, int $telefone){
             $this->codigo = $codigo;
             $this->nome = $nome;
-            $this->especie = $especie;
-            $this->raca = $raca;
-            $this->idade = $idade;
-            $this->tutor = $tutor;
+            $this->crmv = $crmv;
+            $this->especialidade = $especialidade;
+            $this->turno = $turno;
+            $this->telefone = $telefone;
         }
 
         //GET

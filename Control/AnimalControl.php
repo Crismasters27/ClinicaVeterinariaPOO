@@ -6,13 +6,13 @@
     class Control{
 
         private Animal $animal;
-        // Construtor
+        //Construtor
         public function __construct(Animal $animal)
         {
             $this->animal = $animal;
         }
 
-        // Consultar
+        //Consultar
         public function consultarAnimal():string
         {
             return "<br>Código: ".$this->animal->codigo.
@@ -23,42 +23,42 @@
                    "<br>Tutor: ".$this->animal->tutor;
         }
 
-        // Atualizar Nome
+        //Atualizar Nome
         public function atualizarNome(string $nome):string
         {
             $this->animal->nome = $nome;
             return "Nome atualizado com sucesso!";
         }
 
-        // Atualizar Espécie
+        //Atualizar Espécie
         public function atualizarEspecie(string $especie):string
         {
             $this->animal->especie = $especie;
             return "Espécie atualizada com sucesso!";
         }
 
-        // Atualizar Raça
+        //Atualizar Raça
         public function atualizarRaca(string $raca):string
         {
             $this->animal->raca = $raca;
             return "Raça atualizada com sucesso!";
         }
 
-        // Atualizar Idade
+        //Atualizar Idade
         public function atualizarIdade(int $idade):string
         {
             $this->animal->idade = $idade;
             return "Idade atualizada com sucesso!";
         }
 
-        // Atualizar Tutor
+        //Atualizar Tutor
         public function atualizarTutor(string $tutor):string
         {
             $this->animal->tutor = $tutor;
             return "Tutor atualizado com sucesso!";
         }
 
-        // Excluir
+        //Excluir
         public function excluir():int
         {
             $this->animal->codigo = 0;
@@ -67,7 +67,6 @@
             $this->animal->raca = "";
             $this->animal->idade = 0;
             $this->animal->tutor = "";
-
             return 1;
         }
 
