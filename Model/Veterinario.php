@@ -28,7 +28,7 @@
         }
 
         //SET
-        public function __set(string $variavel, string $novoDado):void
+        public function __set(string $variavel, mixed $novoDado):void
         {
             $this->$variavel = $novoDado;
         }

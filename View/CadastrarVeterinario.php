@@ -6,7 +6,22 @@
     use Projeto\ti23t\Model\Veterinario;
     use Projeto\ti23t\Control\Control;
 
-    
+    session_start();
+
+    $cadastrado = false;
+
+    if(isset($_POST['codigo'])){
+        $codigo        = $_POST['codigo'];
+        $nome          = $_POST['nome'];
+        $crmv          = $_POST['crmv'];
+        $especialidade = $_POST['especialidade'];
+        $turno         = $_POST['turno'];
+        $telefone      = $_POST['telefone'];
+
+        $veterinario = new Veterinario($codigo, $nome, $crmv, $especialidade, $turno, $telefone);
+        $_SESSION["veterinario"] = $veterinario;
+        $cadastrado = true;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +32,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         body {
-            background-image: url('../assets/Clinica.png');
+            background-image: url('../assets/wallpaper.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -29,7 +44,7 @@
     <div class="container" style="max-width:600px;">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h1 class="h4 mb-4">Cadastrar Animal</h1>
+                <h1 class="h4 mb-4">Cadastrar Veterinário</h1>
 
                 <form method="POST">
                     <div class="mb-3">
@@ -50,7 +65,11 @@
                     </div>
                     <div class="mb-3">
                         <label>Turno:</label>
-                        <input type="text" name="turno" id="turno" class="form-control"/>
+                        <select name="turno" id="turno" class="form-select">
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noite">Noite</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label>Telefone:</label>
@@ -59,25 +78,6 @@
 
                     <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
                 </form>
-
-                <?php
-                session_start();
-
-                $cadastrado = false;
-
-                if(isset($_POST['codigo'])){
-                    $codigo  = $_POST['codigo'];
-                    $nome    = $_POST['nome'];
-                    $especie = $_POST['especie'];
-                    $raca    = $_POST['raca'];
-                    $idade   = $_POST['idade'];
-                    $tutor   = $_POST['tutor'];
-
-                    $animal = new Animal($codigo, $nome, $especie, $raca, $idade, $tutor);
-                    $_SESSION["animal"] = $animal;
-                    $cadastrado = true;
-                }
-                ?>
 
                 <?php
                     if($cadastrado){

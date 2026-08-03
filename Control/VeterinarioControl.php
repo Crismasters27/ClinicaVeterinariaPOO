@@ -30,28 +30,28 @@
             return "Nome atualizado com sucesso!";
         }
 
-        //Atualizar Espécie
+        //Atualizar CRMV
         public function atualizarCrmv(int $crmv):string
         {
             $this->veterinario->crmv = $crmv;
             return "CRMV atualizado com sucesso!";
         }
 
-        //Atualizar Raça
+        //Atualizar Especialidade
         public function atualizarEspecialidade(string $especialidade):string
         {
             $this->veterinario->especialidade = $especialidade;
             return "Especialidade atualizada com sucesso!";
         }
 
-        //Atualizar Idade
-        public function atualizarTurno(int $turno):string
+        //Atualizar Turno
+        public function atualizarTurno(string $turno):string
         {
             $this->veterinario->turno = $turno;
             return "Turno atualizado com sucesso!";
         }
 
-        //Atualizar Tutor
+        //Atualizar Telefone
         public function atualizarTelefone(int $telefone):string
         {
             $this->veterinario->telefone = $telefone;
@@ -63,10 +63,11 @@
         {
             $this->veterinario->codigo = 0;
             $this->veterinario->nome = "";
-            $this->veterinario->crmv = "";
+            $this->veterinario->crmv = 0;
             $this->veterinario->especialidade = "";
             $this->veterinario->turno = "";
-            $this->veterinario->telefone = "";
+            $this->veterinario->telefone = 0;
+
             return 1;
         }
 
